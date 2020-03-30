@@ -1,3 +1,25 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+
+game = TicTacToe.new
+
+def play(board)
+ puts "Welcome to Tic Tac Toe!"
+ 
+ board.display_board
+
+ # until board.over? do
+   
+    board.turn
+  #end
+
+  if board.won? 
+    puts "Congratulations #{board.winner}"
+  else
+   puts "Cat's game"
+  end
+end
+
+
+play(game)
